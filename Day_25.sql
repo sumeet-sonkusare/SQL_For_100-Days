@@ -22,30 +22,17 @@ The Department table holds all departments of the company.
 | 2  | Sales    |
 +----+----------+
 
-SELECT 
-    Department.Name AS Department, 
-    department_max_sal.Name AS Employee, 
-    department_max_sal.M_Sal AS Salary 
-FROM
-    (
-        SELECT 
-            Name, m.M_Sal, 
-            m.DepartmentId AS sal
-        FROM 
-            Employee
-        JOIN(
-            SELECT 
-                Max(Salary) AS M_Sal, 
-                DepartmentId
-            FROM 
-                Employee
-            GROUP BY 
-                DepartmentId
-            )m
-        ON Employee.Salary=m.M_Sal
-    ) department_max_sal
+SELECT Department.Name AS Department, Employee.Name AS Employee, sal AS Salary
+FROM(
+    SELECT DepartmentId, MAX(Salary) AS sal
+    FROM Employee
+    GROUP BY DepartmentId) a
 JOIN Department
-ON department_max_sal.sal = Department.Id
+ON a.DepartmentId = Department.ID
+JOIN Employee
+ON Employee.DepartmentId = a.DepartmentId
+AND Employee.Salary = a.sal;
+
 
 
 Output
