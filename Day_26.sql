@@ -1,7 +1,7 @@
-1. A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.
-   Write a SQL solution to output big countries' name, population and area from table World
+--1. A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.
+  -- Write a SQL solution to output big countries' name, population and area from table World
    
-https://leetcode.com/problems/big-countries/
+--https://leetcode.com/problems/big-countries/
 
 +-----------------+------------+------------+--------------+---------------+
 | name            | continent  | area       | population   | gdp           |
@@ -28,10 +28,10 @@ Output:
 | Algeria      | 37100000    | 2381741      |
 +--------------+-------------+--------------+
 
-2. There is a table courses with columns: student and class
-List out all classes which have more than or equal to 5 students.
+--2. There is a table courses with columns: student and class
+--List out all classes which have more than or equal to 5 students.
 
-https://leetcode.com/problems/classes-more-than-5-students/
+--https://leetcode.com/problems/classes-more-than-5-students/
 
 +---------+------------+
 | student | class      |
